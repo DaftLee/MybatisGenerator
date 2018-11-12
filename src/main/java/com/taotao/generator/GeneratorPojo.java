@@ -15,7 +15,8 @@ public class GeneratorPojo {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
         //指向逆向工程配置文件
-        File configFile = new File("generatorConfig.xml");
+//        File configFile = new File("generatorConfig.xml");
+        File configFile = new File(this.getClass().getResource("/generatorConfig.xml").getPath());
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
